@@ -1,0 +1,1062 @@
+<?xml version="1.0" encoding="UTF-8" standalone="no"?>
+<document type="com.apple.InterfaceBuilder3.CocoaTouch.Storyboard.XIB" version="3.0" toolsVersion="10117" systemVersion="15F34" targetRuntime="iOS.CocoaTouch" propertyAccessControl="none" useAutolayout="YES" useTraitCollections="YES" initialViewController="PXh-Mk-yEH">
+    <dependencies>
+        <deployment identifier="iOS"/>
+        <plugIn identifier="com.apple.InterfaceBuilder.IBCocoaTouchPlugin" version="10085"/>
+        <capability name="Alignment constraints with different attributes" minToolsVersion="5.1"/>
+        <capability name="Aspect ratio constraints" minToolsVersion="5.1"/>
+        <capability name="Constraints to layout margins" minToolsVersion="6.0"/>
+        <capability name="Constraints with non-1.0 multipliers" minToolsVersion="5.1"/>
+    </dependencies>
+    <scenes>
+        <!--微电影-->
+        <scene sceneID="ufC-wZ-h7g">
+            <objects>
+                <viewController id="vXZ-lx-hvc" customClass="VideoViewController" sceneMemberID="viewController">
+                    <layoutGuides>
+                        <viewControllerLayoutGuide type="top" id="jyV-Pf-zRb"/>
+                        <viewControllerLayoutGuide type="bottom" id="2fi-mo-0CV"/>
+                    </layoutGuides>
+                    <view key="view" contentMode="scaleToFill" id="kh9-bI-dsS">
+                        <rect key="frame" x="0.0" y="0.0" width="600" height="600"/>
+                        <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
+                        <subviews>
+                            <button opaque="NO" contentMode="scaleToFill" misplaced="YES" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="cfP-Qe-0pm">
+                                <rect key="frame" x="0.0" y="64" width="300" height="50"/>
+                                <color key="backgroundColor" red="1" green="1" blue="1" alpha="1" colorSpace="calibratedRGB"/>
+                                <constraints>
+                                    <constraint firstAttribute="width" secondItem="cfP-Qe-0pm" secondAttribute="height" multiplier="6:1" id="I9L-Ty-7TW">
+                                        <variation key="widthClass=compact" constant="-40"/>
+                                    </constraint>
+                                </constraints>
+                                <color key="tintColor" white="0.25" alpha="1" colorSpace="custom" customColorSpace="calibratedWhite"/>
+                                <state key="normal" title="筛选微电影"/>
+                                <connections>
+                                    <action selector="ChooseVideoAction:" destination="vXZ-lx-hvc" eventType="touchUpInside" id="10D-Pe-mDg"/>
+                                </connections>
+                            </button>
+                            <button opaque="NO" contentMode="scaleToFill" misplaced="YES" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="mLU-c5-sPv">
+                                <rect key="frame" x="300" y="64" width="300" height="50"/>
+                                <color key="backgroundColor" red="1" green="1" blue="1" alpha="1" colorSpace="calibratedRGB"/>
+                                <constraints>
+                                    <constraint firstAttribute="width" secondItem="mLU-c5-sPv" secondAttribute="height" multiplier="6:1" id="Es6-t0-TRs">
+                                        <variation key="widthClass=compact" constant="-40"/>
+                                    </constraint>
+                                </constraints>
+                                <color key="tintColor" white="0.25" alpha="1" colorSpace="custom" customColorSpace="calibratedWhite"/>
+                                <state key="normal" title="发现微电影"/>
+                                <connections>
+                                    <action selector="FindVideoAction:" destination="vXZ-lx-hvc" eventType="touchUpInside" id="zJ0-DW-cs5"/>
+                                </connections>
+                            </button>
+                        </subviews>
+                        <color key="backgroundColor" white="1" alpha="1" colorSpace="custom" customColorSpace="calibratedWhite"/>
+                        <constraints>
+                            <constraint firstAttribute="trailingMargin" secondItem="mLU-c5-sPv" secondAttribute="trailing" constant="-16" id="BWy-ZS-BOo"/>
+                            <constraint firstItem="mLU-c5-sPv" firstAttribute="top" secondItem="jyV-Pf-zRb" secondAttribute="bottom" id="JLz-1E-mjU"/>
+                            <constraint firstItem="cfP-Qe-0pm" firstAttribute="top" secondItem="jyV-Pf-zRb" secondAttribute="bottom" id="LEO-uF-s8d"/>
+                            <constraint firstItem="cfP-Qe-0pm" firstAttribute="leading" secondItem="kh9-bI-dsS" secondAttribute="leadingMargin" constant="-16" id="M1S-Ie-qpv"/>
+                            <constraint firstAttribute="width" secondItem="mLU-c5-sPv" secondAttribute="width" multiplier="2:1" id="ReI-qd-tnn"/>
+                            <constraint firstAttribute="width" secondItem="cfP-Qe-0pm" secondAttribute="width" multiplier="2:1" id="ziI-fj-dlm"/>
+                        </constraints>
+                    </view>
+                    <navigationItem key="navigationItem" title="微电影" id="DUP-h5-sIt">
+                        <barButtonItem key="leftBarButtonItem" image="SearchBarButtonHighlight.png" id="YT0-9I-YdF">
+                            <connections>
+                                <segue destination="W6r-xr-2yb" kind="push" id="31M-4A-5nT"/>
+                            </connections>
+                        </barButtonItem>
+                        <barButtonItem key="rightBarButtonItem" image="user_center2_tab_history.png" id="spS-FL-bql">
+                            <connections>
+                                <segue destination="Du5-Ab-WP9" kind="push" id="Ejd-PA-xFX"/>
+                            </connections>
+                        </barButtonItem>
+                    </navigationItem>
+                    <connections>
+                        <outlet property="chooseVideo" destination="cfP-Qe-0pm" id="CZ3-1f-b8z"/>
+                        <outlet property="findVideo" destination="mLU-c5-sPv" id="LHJ-u1-aWa"/>
+                        <segue destination="veR-dd-bPq" kind="push" identifier="pushToSift" id="hLE-Vz-eyQ"/>
+                        <segue destination="Wlf-Jk-ktZ" kind="push" identifier="videoPushToPlay" id="5IG-NQ-4tA"/>
+                    </connections>
+                </viewController>
+                <placeholder placeholderIdentifier="IBFirstResponder" id="x5A-6p-PRh" sceneMemberID="firstResponder"/>
+            </objects>
+            <point key="canvasLocation" x="-3247.5" y="-366"/>
+        </scene>
+        <!--Play View Controller-->
+        <scene sceneID="fz4-hD-bjj">
+            <objects>
+                <viewController autoresizesArchivedViewToFullSize="NO" automaticallyAdjustsScrollViewInsets="NO" hidesBottomBarWhenPushed="YES" id="Wlf-Jk-ktZ" customClass="PlayViewController" sceneMemberID="viewController">
+                    <layoutGuides>
+                        <viewControllerLayoutGuide type="top" id="Sx2-fT-hJO"/>
+                        <viewControllerLayoutGuide type="bottom" id="0mE-7x-87b"/>
+                    </layoutGuides>
+                    <view key="view" contentMode="scaleToFill" id="wKU-jQ-mah">
+                        <rect key="frame" x="0.0" y="0.0" width="600" height="600"/>
+                        <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
+                        <subviews>
+                            <tableView clipsSubviews="YES" contentMode="scaleToFill" alwaysBounceVertical="YES" dataMode="prototypes" style="plain" separatorStyle="default" rowHeight="44" sectionHeaderHeight="22" sectionFooterHeight="22" translatesAutoresizingMaskIntoConstraints="NO" id="Tg8-l5-kdo">
+                                <rect key="frame" x="0.0" y="0.0" width="320" height="568"/>
+                                <color key="backgroundColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
+                                <connections>
+                                    <outlet property="dataSource" destination="Wlf-Jk-ktZ" id="SLV-B9-TXq"/>
+                                    <outlet property="delegate" destination="Wlf-Jk-ktZ" id="AkD-D1-jio"/>
+                                </connections>
+                            </tableView>
+                        </subviews>
+                        <color key="backgroundColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
+                        <constraints>
+                            <constraint firstItem="Tg8-l5-kdo" firstAttribute="leading" secondItem="wKU-jQ-mah" secondAttribute="leadingMargin" constant="-16" id="D1x-fF-S1b"/>
+                            <constraint firstItem="0mE-7x-87b" firstAttribute="top" secondItem="Tg8-l5-kdo" secondAttribute="bottom" id="Fxz-gi-L4P">
+                                <variation key="widthClass=compact" constant="0.0"/>
+                            </constraint>
+                            <constraint firstItem="Tg8-l5-kdo" firstAttribute="top" secondItem="wKU-jQ-mah" secondAttribute="topMargin" id="Q8N-5u-7W0">
+                                <variation key="widthClass=compact" constant="64"/>
+                            </constraint>
+                            <constraint firstAttribute="trailingMargin" secondItem="Tg8-l5-kdo" secondAttribute="trailing" constant="-16" id="Vp4-b5-Duo"/>
+                        </constraints>
+                        <variation key="default">
+                            <mask key="subviews">
+                                <exclude reference="Tg8-l5-kdo"/>
+                            </mask>
+                            <mask key="constraints">
+                                <exclude reference="Fxz-gi-L4P"/>
+                                <exclude reference="D1x-fF-S1b"/>
+                                <exclude reference="Q8N-5u-7W0"/>
+                                <exclude reference="Vp4-b5-Duo"/>
+                            </mask>
+                        </variation>
+                        <variation key="widthClass=compact">
+                            <mask key="subviews">
+                                <include reference="Tg8-l5-kdo"/>
+                            </mask>
+                            <mask key="constraints">
+                                <include reference="Fxz-gi-L4P"/>
+                                <include reference="D1x-fF-S1b"/>
+                                <include reference="Q8N-5u-7W0"/>
+                                <include reference="Vp4-b5-Duo"/>
+                            </mask>
+                        </variation>
+                    </view>
+                    <navigationItem key="navigationItem" id="wI9-Ps-usx">
+                        <barButtonItem key="leftBarButtonItem" image="BackBarButton.png" id="JPk-Zb-0o4">
+                            <connections>
+                                <action selector="returnToRootViewController:" destination="Wlf-Jk-ktZ" id="fDk-bq-UhG"/>
+                            </connections>
+                        </barButtonItem>
+                    </navigationItem>
+                    <connections>
+                        <outlet property="tableView" destination="Tg8-l5-kdo" id="3y4-EC-cI2"/>
+                    </connections>
+                </viewController>
+                <placeholder placeholderIdentifier="IBFirstResponder" id="S6q-p1-dmI" userLabel="First Responder" sceneMemberID="firstResponder"/>
+            </objects>
+            <point key="canvasLocation" x="-610.5" y="829"/>
+        </scene>
+        <!--Play Drama View Controller-->
+        <scene sceneID="DU8-lu-yCb">
+            <objects>
+                <viewController hidesBottomBarWhenPushed="YES" id="h5j-tw-KEj" customClass="PlayDramaViewController" sceneMemberID="viewController">
+                    <layoutGuides>
+                        <viewControllerLayoutGuide type="top" id="cQp-lg-eiy"/>
+                        <viewControllerLayoutGuide type="bottom" id="UNh-xD-ki3"/>
+                    </layoutGuides>
+                    <view key="view" contentMode="scaleToFill" id="Jfx-aL-okT">
+                        <rect key="frame" x="0.0" y="0.0" width="600" height="600"/>
+                        <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
+                        <subviews>
+                            <tableView clipsSubviews="YES" contentMode="scaleToFill" alwaysBounceVertical="YES" dataMode="prototypes" style="plain" separatorStyle="default" rowHeight="44" sectionHeaderHeight="22" sectionFooterHeight="22" translatesAutoresizingMaskIntoConstraints="NO" id="yXZ-bK-P05">
+                                <rect key="frame" x="0.0" y="0.0" width="320" height="568"/>
+                                <color key="backgroundColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
+                                <connections>
+                                    <outlet property="dataSource" destination="h5j-tw-KEj" id="xyf-VY-D2m"/>
+                                    <outlet property="delegate" destination="h5j-tw-KEj" id="CGR-ix-193"/>
+                                </connections>
+                            </tableView>
+                        </subviews>
+                        <color key="backgroundColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
+                        <constraints>
+                            <constraint firstAttribute="trailingMargin" secondItem="yXZ-bK-P05" secondAttribute="trailing" constant="-16" id="4am-tE-G6E"/>
+                            <constraint firstItem="yXZ-bK-P05" firstAttribute="leading" secondItem="Jfx-aL-okT" secondAttribute="leadingMargin" constant="-16" id="DKa-aF-Syu"/>
+                            <constraint firstItem="yXZ-bK-P05" firstAttribute="top" secondItem="Jfx-aL-okT" secondAttribute="topMargin" id="K68-gp-fQE"/>
+                            <constraint firstItem="UNh-xD-ki3" firstAttribute="top" secondItem="yXZ-bK-P05" secondAttribute="bottom" id="P3O-zW-dfK">
+                                <variation key="widthClass=compact" constant="0.0"/>
+                            </constraint>
+                        </constraints>
+                        <variation key="default">
+                            <mask key="subviews">
+                                <exclude reference="yXZ-bK-P05"/>
+                            </mask>
+                            <mask key="constraints">
+                                <exclude reference="P3O-zW-dfK"/>
+                                <exclude reference="4am-tE-G6E"/>
+                                <exclude reference="DKa-aF-Syu"/>
+                                <exclude reference="K68-gp-fQE"/>
+                            </mask>
+                        </variation>
+                        <variation key="widthClass=compact">
+                            <mask key="subviews">
+                                <include reference="yXZ-bK-P05"/>
+                            </mask>
+                            <mask key="constraints">
+                                <include reference="P3O-zW-dfK"/>
+                                <include reference="4am-tE-G6E"/>
+                                <include reference="DKa-aF-Syu"/>
+                                <include reference="K68-gp-fQE"/>
+                            </mask>
+                        </variation>
+                    </view>
+                    <navigationItem key="navigationItem" id="otX-fN-aID">
+                        <barButtonItem key="leftBarButtonItem" image="BackBarButton.png" id="3ad-6K-R4L">
+                            <connections>
+                                <action selector="returnToRootViewController:" destination="h5j-tw-KEj" id="sMC-hm-oFm"/>
+                            </connections>
+                        </barButtonItem>
+                    </navigationItem>
+                    <connections>
+                        <outlet property="tableView" destination="yXZ-bK-P05" id="gDo-gd-6Yo"/>
+                    </connections>
+                </viewController>
+                <placeholder placeholderIdentifier="IBFirstResponder" id="sY7-X8-XNC" userLabel="First Responder" sceneMemberID="firstResponder"/>
+            </objects>
+            <point key="canvasLocation" x="-1240.5" y="1672"/>
+        </scene>
+        <!--Search View Controller-->
+        <scene sceneID="G6N-cf-kjr">
+            <objects>
+                <viewController hidesBottomBarWhenPushed="YES" id="W6r-xr-2yb" customClass="SearchViewController" sceneMemberID="viewController">
+                    <layoutGuides>
+                        <viewControllerLayoutGuide type="top" id="vu6-hV-odW"/>
+                        <viewControllerLayoutGuide type="bottom" id="9Af-Db-zut"/>
+                    </layoutGuides>
+                    <view key="view" contentMode="scaleToFill" id="prb-qK-35y">
+                        <rect key="frame" x="0.0" y="0.0" width="600" height="600"/>
+                        <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
+                        <color key="backgroundColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
+                    </view>
+                    <navigationItem key="navigationItem" id="6EV-ur-PBX">
+                        <barButtonItem key="leftBarButtonItem" image="BackBarButton.png" id="jKW-Zj-63b">
+                            <connections>
+                                <action selector="returnToRootViewController:" destination="W6r-xr-2yb" id="gPN-WK-Reb"/>
+                            </connections>
+                        </barButtonItem>
+                    </navigationItem>
+                    <connections>
+                        <segue destination="r7A-i2-8Fd" kind="push" identifier="pushToResult" id="0Jg-kU-WWN"/>
+                    </connections>
+                </viewController>
+                <placeholder placeholderIdentifier="IBFirstResponder" id="O5J-nm-c7L" userLabel="First Responder" sceneMemberID="firstResponder"/>
+            </objects>
+            <point key="canvasLocation" x="-2145" y="-366"/>
+        </scene>
+        <!--Result View Controller-->
+        <scene sceneID="tqQ-SH-fLK">
+            <objects>
+                <viewController id="r7A-i2-8Fd" customClass="ResultViewController" sceneMemberID="viewController">
+                    <layoutGuides>
+                        <viewControllerLayoutGuide type="top" id="3wc-CS-dgS"/>
+                        <viewControllerLayoutGuide type="bottom" id="Vuj-WY-Os7"/>
+                    </layoutGuides>
+                    <view key="view" contentMode="scaleToFill" id="Rxz-p1-TDE">
+                        <rect key="frame" x="0.0" y="0.0" width="600" height="600"/>
+                        <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
+                        <subviews>
+                            <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="VG6-4v-vCG">
+                                <rect key="frame" x="-23" y="-15" width="46" height="30"/>
+                                <color key="backgroundColor" white="1" alpha="1" colorSpace="custom" customColorSpace="calibratedWhite"/>
+                                <constraints>
+                                    <constraint firstAttribute="width" secondItem="VG6-4v-vCG" secondAttribute="height" multiplier="5:2" id="OEi-dW-pxK">
+                                        <variation key="widthClass=compact" constant="33"/>
+                                    </constraint>
+                                </constraints>
+                                <color key="tintColor" white="0.25" alpha="1" colorSpace="custom" customColorSpace="calibratedWhite"/>
+                                <state key="normal" title="微电影">
+                                    <color key="titleShadowColor" white="0.5" alpha="1" colorSpace="calibratedWhite"/>
+                                </state>
+                                <variation key="default">
+                                    <mask key="constraints">
+                                        <exclude reference="OEi-dW-pxK"/>
+                                    </mask>
+                                </variation>
+                                <variation key="widthClass=compact">
+                                    <mask key="constraints">
+                                        <include reference="OEi-dW-pxK"/>
+                                    </mask>
+                                </variation>
+                                <connections>
+                                    <action selector="touchVideoButton:" destination="r7A-i2-8Fd" eventType="touchUpInside" id="R3u-o2-rX9"/>
+                                </connections>
+                            </button>
+                            <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="mW4-0A-q3W">
+                                <rect key="frame" x="-23" y="-15" width="46" height="30"/>
+                                <color key="backgroundColor" white="1" alpha="1" colorSpace="custom" customColorSpace="calibratedWhite"/>
+                                <color key="tintColor" white="0.25" alpha="1" colorSpace="custom" customColorSpace="calibratedWhite"/>
+                                <state key="normal" title="网络剧">
+                                    <color key="titleShadowColor" white="0.5" alpha="1" colorSpace="calibratedWhite"/>
+                                </state>
+                                <connections>
+                                    <action selector="touchDramaButton:" destination="r7A-i2-8Fd" eventType="touchUpInside" id="aF1-p3-4Uy"/>
+                                </connections>
+                            </button>
+                            <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="neg-N0-bhX">
+                                <rect key="frame" x="-23" y="-15" width="46" height="30"/>
+                                <color key="backgroundColor" white="1" alpha="1" colorSpace="custom" customColorSpace="calibratedWhite"/>
+                                <color key="tintColor" white="0.25" alpha="1" colorSpace="custom" customColorSpace="calibratedWhite"/>
+                                <state key="normal" title="剧本">
+                                    <color key="titleShadowColor" white="0.5" alpha="1" colorSpace="calibratedWhite"/>
+                                </state>
+                                <connections>
+                                    <action selector="touchScreenPlayButton:" destination="r7A-i2-8Fd" eventType="touchUpInside" id="O73-Wx-c95"/>
+                                </connections>
+                            </button>
+                        </subviews>
+                        <color key="backgroundColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
+                        <constraints>
+                            <constraint firstItem="VG6-4v-vCG" firstAttribute="leading" secondItem="Rxz-p1-TDE" secondAttribute="leadingMargin" constant="-16" id="5Y1-zI-hyG"/>
+                            <constraint firstItem="VG6-4v-vCG" firstAttribute="top" secondItem="3wc-CS-dgS" secondAttribute="bottom" id="9bd-Vv-QB6"/>
+                            <constraint firstItem="mW4-0A-q3W" firstAttribute="width" secondItem="VG6-4v-vCG" secondAttribute="width" id="JVN-08-cFW"/>
+                            <constraint firstItem="mW4-0A-q3W" firstAttribute="height" secondItem="neg-N0-bhX" secondAttribute="height" id="KI3-yw-kvQ"/>
+                            <constraint firstItem="mW4-0A-q3W" firstAttribute="leading" secondItem="VG6-4v-vCG" secondAttribute="trailing" id="PVA-U5-QGL"/>
+                            <constraint firstItem="mW4-0A-q3W" firstAttribute="top" secondItem="3wc-CS-dgS" secondAttribute="bottom" id="VTe-kW-mpD"/>
+                            <constraint firstItem="mW4-0A-q3W" firstAttribute="height" secondItem="VG6-4v-vCG" secondAttribute="height" id="e16-cA-YWG"/>
+                            <constraint firstAttribute="width" secondItem="VG6-4v-vCG" secondAttribute="width" multiplier="4:1" id="eWR-kY-7eQ">
+                                <variation key="widthClass=compact" constant="-132"/>
+                            </constraint>
+                            <constraint firstItem="neg-N0-bhX" firstAttribute="top" secondItem="3wc-CS-dgS" secondAttribute="bottom" id="p4D-j0-0Ad"/>
+                            <constraint firstItem="neg-N0-bhX" firstAttribute="leading" secondItem="mW4-0A-q3W" secondAttribute="trailing" id="qyW-5r-6Pn"/>
+                            <constraint firstItem="mW4-0A-q3W" firstAttribute="width" secondItem="neg-N0-bhX" secondAttribute="width" id="rJI-zE-hud"/>
+                        </constraints>
+                        <variation key="default">
+                            <mask key="subviews">
+                                <exclude reference="VG6-4v-vCG"/>
+                                <exclude reference="mW4-0A-q3W"/>
+                                <exclude reference="neg-N0-bhX"/>
+                            </mask>
+                            <mask key="constraints">
+                                <exclude reference="5Y1-zI-hyG"/>
+                                <exclude reference="9bd-Vv-QB6"/>
+                                <exclude reference="eWR-kY-7eQ"/>
+                                <exclude reference="JVN-08-cFW"/>
+                                <exclude reference="KI3-yw-kvQ"/>
+                                <exclude reference="PVA-U5-QGL"/>
+                                <exclude reference="VTe-kW-mpD"/>
+                                <exclude reference="e16-cA-YWG"/>
+                                <exclude reference="rJI-zE-hud"/>
+                                <exclude reference="p4D-j0-0Ad"/>
+                                <exclude reference="qyW-5r-6Pn"/>
+                            </mask>
+                        </variation>
+                        <variation key="widthClass=compact">
+                            <mask key="subviews">
+                                <include reference="VG6-4v-vCG"/>
+                                <include reference="mW4-0A-q3W"/>
+                                <include reference="neg-N0-bhX"/>
+                            </mask>
+                            <mask key="constraints">
+                                <include reference="5Y1-zI-hyG"/>
+                                <include reference="9bd-Vv-QB6"/>
+                                <include reference="eWR-kY-7eQ"/>
+                                <include reference="JVN-08-cFW"/>
+                                <include reference="KI3-yw-kvQ"/>
+                                <include reference="PVA-U5-QGL"/>
+                                <include reference="VTe-kW-mpD"/>
+                                <include reference="e16-cA-YWG"/>
+                                <include reference="rJI-zE-hud"/>
+                                <include reference="p4D-j0-0Ad"/>
+                                <include reference="qyW-5r-6Pn"/>
+                            </mask>
+                        </variation>
+                    </view>
+                    <navigationItem key="navigationItem" id="Du9-gK-VPI"/>
+                    <connections>
+                        <outlet property="dramaButton" destination="mW4-0A-q3W" id="fH6-mM-VQ4"/>
+                        <outlet property="screenButton" destination="neg-N0-bhX" id="Mcf-5b-TzH"/>
+                        <outlet property="videoButton" destination="VG6-4v-vCG" id="bUS-wK-a0h"/>
+                        <segue destination="Fe1-Ls-Q2X" kind="push" identifier="resultToScreenInfor" id="GnN-uJ-C7b"/>
+                        <segue destination="Wlf-Jk-ktZ" kind="push" identifier="ResultToPlay" id="K9S-A8-dUl"/>
+                        <segue destination="h5j-tw-KEj" kind="push" identifier="ResultModelToDrama" id="DFM-pV-7kZ"/>
+                    </connections>
+                </viewController>
+                <placeholder placeholderIdentifier="IBFirstResponder" id="fI1-cZ-2cq" userLabel="First Responder" sceneMemberID="firstResponder"/>
+            </objects>
+            <point key="canvasLocation" x="-1197" y="-366"/>
+        </scene>
+        <!--播放历史-->
+        <scene sceneID="C2M-dN-F19">
+            <objects>
+                <viewController hidesBottomBarWhenPushed="YES" id="Du5-Ab-WP9" customClass="WatchHistoryViewController" sceneMemberID="viewController">
+                    <layoutGuides>
+                        <viewControllerLayoutGuide type="top" id="e5z-62-Kwb"/>
+                        <viewControllerLayoutGuide type="bottom" id="4hd-uB-RkY"/>
+                    </layoutGuides>
+                    <view key="view" contentMode="scaleToFill" id="kbB-JV-9Qt">
+                        <rect key="frame" x="0.0" y="0.0" width="600" height="600"/>
+                        <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
+                        <color key="backgroundColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
+                    </view>
+                    <navigationItem key="navigationItem" title="播放历史" id="Fl6-aK-yVe">
+                        <barButtonItem key="leftBarButtonItem" image="BackBarButton.png" id="UYf-wG-E10">
+                            <connections>
+                                <action selector="returnToPlayVC:" destination="Du5-Ab-WP9" id="Itj-tf-Qyf"/>
+                            </connections>
+                        </barButtonItem>
+                        <barButtonItem key="rightBarButtonItem" title="删除全部" id="kAo-w6-Eky">
+                            <color key="tintColor" red="0.0" green="0.47843137250000001" blue="1" alpha="1" colorSpace="calibratedRGB"/>
+                            <connections>
+                                <action selector="chooseItemToDelete:" destination="Du5-Ab-WP9" id="P0g-px-OpF"/>
+                            </connections>
+                        </barButtonItem>
+                    </navigationItem>
+                    <connections>
+                        <segue destination="Wlf-Jk-ktZ" kind="push" identifier="historyPushToVideoPlay" id="Kkn-Rh-nts"/>
+                        <segue destination="h5j-tw-KEj" kind="push" identifier="historyPushToDramaPlay" id="eUo-Zq-HO6"/>
+                    </connections>
+                </viewController>
+                <placeholder placeholderIdentifier="IBFirstResponder" id="0vO-MO-eBh" userLabel="First Responder" sceneMemberID="firstResponder"/>
+            </objects>
+            <point key="canvasLocation" x="-2025" y="422"/>
+        </scene>
+        <!--网络剧-->
+        <scene sceneID="T3k-gr-Qyd">
+            <objects>
+                <viewController id="mJG-2Q-RqR" customClass="DramaViewController" sceneMemberID="viewController">
+                    <layoutGuides>
+                        <viewControllerLayoutGuide type="top" id="xnk-Vo-goa"/>
+                        <viewControllerLayoutGuide type="bottom" id="Pls-eQ-OR7"/>
+                    </layoutGuides>
+                    <view key="view" contentMode="scaleToFill" id="oM9-eM-B8N">
+                        <rect key="frame" x="0.0" y="0.0" width="600" height="600"/>
+                        <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
+                        <subviews>
+                            <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="fg7-14-Rn5">
+                                <rect key="frame" x="-23" y="-15" width="46" height="30"/>
+                                <color key="backgroundColor" white="1" alpha="1" colorSpace="custom" customColorSpace="calibratedWhite"/>
+                                <constraints>
+                                    <constraint firstAttribute="width" secondItem="fg7-14-Rn5" secondAttribute="height" multiplier="5:1" id="wpC-jn-1hn"/>
+                                </constraints>
+                                <color key="tintColor" white="0.25" alpha="1" colorSpace="custom" customColorSpace="calibratedWhite"/>
+                                <state key="normal" title="筛选网络剧">
+                                    <color key="titleShadowColor" white="0.5" alpha="1" colorSpace="calibratedWhite"/>
+                                </state>
+                                <variation key="default">
+                                    <mask key="constraints">
+                                        <exclude reference="wpC-jn-1hn"/>
+                                    </mask>
+                                </variation>
+                                <variation key="widthClass=compact">
+                                    <mask key="constraints">
+                                        <include reference="wpC-jn-1hn"/>
+                                    </mask>
+                                </variation>
+                                <connections>
+                                    <action selector="chooseDramaAction:" destination="mJG-2Q-RqR" eventType="touchUpInside" id="4CP-Uw-s89"/>
+                                </connections>
+                            </button>
+                            <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="0uc-eN-cOG">
+                                <rect key="frame" x="-23" y="-15" width="46" height="30"/>
+                                <color key="backgroundColor" white="1" alpha="1" colorSpace="custom" customColorSpace="calibratedWhite"/>
+                                <constraints>
+                                    <constraint firstAttribute="width" secondItem="0uc-eN-cOG" secondAttribute="height" multiplier="5:1" id="Se1-0E-2Wc"/>
+                                </constraints>
+                                <color key="tintColor" white="0.25" alpha="1" colorSpace="custom" customColorSpace="calibratedWhite"/>
+                                <state key="normal" title="发现网络剧">
+                                    <color key="titleShadowColor" white="0.5" alpha="1" colorSpace="calibratedWhite"/>
+                                </state>
+                                <variation key="default">
+                                    <mask key="constraints">
+                                        <exclude reference="Se1-0E-2Wc"/>
+                                    </mask>
+                                </variation>
+                                <variation key="widthClass=compact">
+                                    <mask key="constraints">
+                                        <include reference="Se1-0E-2Wc"/>
+                                    </mask>
+                                </variation>
+                                <connections>
+                                    <action selector="selectDramaAction:" destination="mJG-2Q-RqR" eventType="touchUpInside" id="XNN-Wm-keN"/>
+                                </connections>
+                            </button>
+                        </subviews>
+                        <color key="backgroundColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
+                        <color key="tintColor" red="1" green="0.0" blue="1" alpha="1" colorSpace="calibratedRGB"/>
+                        <constraints>
+                            <constraint firstItem="0uc-eN-cOG" firstAttribute="top" secondItem="xnk-Vo-goa" secondAttribute="bottom" id="3qe-mD-6fG"/>
+                            <constraint firstItem="fg7-14-Rn5" firstAttribute="leading" secondItem="oM9-eM-B8N" secondAttribute="leadingMargin" constant="-16" id="8Ii-Oj-Kvf"/>
+                            <constraint firstItem="0uc-eN-cOG" firstAttribute="width" secondItem="oM9-eM-B8N" secondAttribute="width" multiplier="1:2" id="QyD-jR-bjz"/>
+                            <constraint firstAttribute="trailingMargin" secondItem="0uc-eN-cOG" secondAttribute="trailing" constant="-16" id="XQP-eD-kTM"/>
+                            <constraint firstAttribute="width" secondItem="fg7-14-Rn5" secondAttribute="width" multiplier="2:1" id="pnr-xg-09N"/>
+                            <constraint firstItem="fg7-14-Rn5" firstAttribute="top" secondItem="xnk-Vo-goa" secondAttribute="bottom" id="vk1-2u-p0W"/>
+                        </constraints>
+                        <variation key="default">
+                            <mask key="subviews">
+                                <exclude reference="fg7-14-Rn5"/>
+                                <exclude reference="0uc-eN-cOG"/>
+                            </mask>
+                            <mask key="constraints">
+                                <exclude reference="3qe-mD-6fG"/>
+                                <exclude reference="QyD-jR-bjz"/>
+                                <exclude reference="XQP-eD-kTM"/>
+                                <exclude reference="8Ii-Oj-Kvf"/>
+                                <exclude reference="pnr-xg-09N"/>
+                                <exclude reference="vk1-2u-p0W"/>
+                            </mask>
+                        </variation>
+                        <variation key="widthClass=compact">
+                            <mask key="subviews">
+                                <include reference="fg7-14-Rn5"/>
+                                <include reference="0uc-eN-cOG"/>
+                            </mask>
+                            <mask key="constraints">
+                                <include reference="3qe-mD-6fG"/>
+                                <include reference="QyD-jR-bjz"/>
+                                <include reference="XQP-eD-kTM"/>
+                                <include reference="8Ii-Oj-Kvf"/>
+                                <include reference="pnr-xg-09N"/>
+                                <include reference="vk1-2u-p0W"/>
+                            </mask>
+                        </variation>
+                    </view>
+                    <navigationItem key="navigationItem" title="网络剧" id="KXJ-yx-iKW">
+                        <barButtonItem key="leftBarButtonItem" image="SearchBarButtonHighlight.png" id="Caf-xt-lZK">
+                            <connections>
+                                <action selector="pushToSearchVC:" destination="mJG-2Q-RqR" id="YOi-fW-YER"/>
+                            </connections>
+                        </barButtonItem>
+                        <barButtonItem key="rightBarButtonItem" image="user_center2_tab_history.png" id="wdo-qm-Dbs">
+                            <color key="tintColor" red="0.0" green="0.47843137250000001" blue="1" alpha="1" colorSpace="calibratedRGB"/>
+                            <connections>
+                                <action selector="pushToHistoryVC:" destination="mJG-2Q-RqR" id="eFY-Gr-Cup"/>
+                            </connections>
+                        </barButtonItem>
+                    </navigationItem>
+                    <connections>
+                        <outlet property="chooseDrama" destination="fg7-14-Rn5" id="ayE-zg-1sI"/>
+                        <outlet property="findDrama" destination="0uc-eN-cOG" id="i5b-JE-cEZ"/>
+                        <segue destination="veR-dd-bPq" kind="push" identifier="dramaPushToSift" id="jhf-1d-UzE"/>
+                        <segue destination="h5j-tw-KEj" kind="push" identifier="DramaModelToPlay" id="8gm-HM-0AZ"/>
+                        <segue destination="W6r-xr-2yb" kind="push" identifier="DramaPushToSearch" id="v5G-aQ-iIx"/>
+                        <segue destination="Du5-Ab-WP9" kind="push" identifier="DramaPushToWatchHistory" id="SBP-yO-AXR"/>
+                    </connections>
+                </viewController>
+                <placeholder placeholderIdentifier="IBFirstResponder" id="gSS-0U-bxw" userLabel="First Responder" sceneMemberID="firstResponder"/>
+            </objects>
+            <point key="canvasLocation" x="-3493.5" y="358"/>
+        </scene>
+        <!--剧本-->
+        <scene sceneID="d1T-8Y-ZpT">
+            <objects>
+                <viewController id="9hz-dM-8XY" customClass="ScreenplayViewController" sceneMemberID="viewController">
+                    <layoutGuides>
+                        <viewControllerLayoutGuide type="top" id="F3O-YJ-orj"/>
+                        <viewControllerLayoutGuide type="bottom" id="3SQ-ZF-Voi"/>
+                    </layoutGuides>
+                    <view key="view" contentMode="scaleToFill" id="cuj-FM-mYi">
+                        <rect key="frame" x="0.0" y="0.0" width="600" height="600"/>
+                        <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
+                        <subviews>
+                            <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="c97-Fl-oMW">
+                                <rect key="frame" x="-23" y="-15" width="46" height="30"/>
+                                <constraints>
+                                    <constraint firstAttribute="width" secondItem="c97-Fl-oMW" secondAttribute="height" multiplier="5:1" id="sYM-zK-Bne"/>
+                                </constraints>
+                                <state key="normal" title="筛选剧本">
+                                    <color key="titleColor" white="0.5" alpha="1" colorSpace="custom" customColorSpace="calibratedWhite"/>
+                                    <color key="titleShadowColor" white="0.5" alpha="1" colorSpace="calibratedWhite"/>
+                                </state>
+                                <variation key="default">
+                                    <mask key="constraints">
+                                        <exclude reference="sYM-zK-Bne"/>
+                                    </mask>
+                                </variation>
+                                <variation key="widthClass=compact">
+                                    <mask key="constraints">
+                                        <include reference="sYM-zK-Bne"/>
+                                    </mask>
+                                </variation>
+                                <connections>
+                                    <action selector="selectScreenplayButton:" destination="9hz-dM-8XY" eventType="touchUpInside" id="G51-do-PiZ"/>
+                                </connections>
+                            </button>
+                            <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="hpd-Mc-5Hg">
+                                <rect key="frame" x="-23" y="-15" width="46" height="30"/>
+                                <constraints>
+                                    <constraint firstAttribute="width" secondItem="hpd-Mc-5Hg" secondAttribute="height" multiplier="5:1" id="eIk-to-FbP"/>
+                                </constraints>
+                                <state key="normal" title="发现剧本">
+                                    <color key="titleColor" white="0.5" alpha="1" colorSpace="custom" customColorSpace="calibratedWhite"/>
+                                    <color key="titleShadowColor" white="0.5" alpha="1" colorSpace="calibratedWhite"/>
+                                </state>
+                                <variation key="default">
+                                    <mask key="constraints">
+                                        <exclude reference="eIk-to-FbP"/>
+                                    </mask>
+                                </variation>
+                                <variation key="widthClass=compact">
+                                    <mask key="constraints">
+                                        <include reference="eIk-to-FbP"/>
+                                    </mask>
+                                </variation>
+                                <connections>
+                                    <action selector="findOutScreenplayButton:" destination="9hz-dM-8XY" eventType="touchUpInside" id="dmu-k7-xze"/>
+                                </connections>
+                            </button>
+                            <tableView clipsSubviews="YES" contentMode="scaleToFill" alwaysBounceVertical="YES" dataMode="prototypes" style="plain" separatorStyle="default" rowHeight="44" sectionHeaderHeight="22" sectionFooterHeight="22" translatesAutoresizingMaskIntoConstraints="NO" id="nFm-eN-Pdz">
+                                <rect key="frame" x="0.0" y="0.0" width="320" height="568"/>
+                                <color key="backgroundColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
+                                <connections>
+                                    <outlet property="dataSource" destination="9hz-dM-8XY" id="fXC-PT-PJ5"/>
+                                    <outlet property="delegate" destination="9hz-dM-8XY" id="mwH-Y6-cQg"/>
+                                </connections>
+                            </tableView>
+                        </subviews>
+                        <color key="backgroundColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
+                        <constraints>
+                            <constraint firstAttribute="trailingMargin" secondItem="nFm-eN-Pdz" secondAttribute="trailing" constant="-16" id="8by-Hy-Du3"/>
+                            <constraint firstItem="nFm-eN-Pdz" firstAttribute="leading" secondItem="cuj-FM-mYi" secondAttribute="leadingMargin" constant="-16" id="HdN-Dq-5rW"/>
+                            <constraint firstAttribute="width" secondItem="c97-Fl-oMW" secondAttribute="width" multiplier="2:1" id="Jk3-EQ-YJS"/>
+                            <constraint firstItem="c97-Fl-oMW" firstAttribute="top" secondItem="F3O-YJ-orj" secondAttribute="bottom" id="LzV-Ds-bs4"/>
+                            <constraint firstItem="hpd-Mc-5Hg" firstAttribute="top" secondItem="F3O-YJ-orj" secondAttribute="bottom" id="bXn-60-CMW"/>
+                            <constraint firstItem="3SQ-ZF-Voi" firstAttribute="top" secondItem="nFm-eN-Pdz" secondAttribute="bottom" id="cYe-Mi-aoe"/>
+                            <constraint firstItem="c97-Fl-oMW" firstAttribute="leading" secondItem="cuj-FM-mYi" secondAttribute="leadingMargin" constant="-16" id="eU9-Cx-Id2"/>
+                            <constraint firstItem="hpd-Mc-5Hg" firstAttribute="width" secondItem="cuj-FM-mYi" secondAttribute="width" multiplier="1:2" id="h1J-DK-uh9"/>
+                            <constraint firstAttribute="trailingMargin" secondItem="hpd-Mc-5Hg" secondAttribute="trailing" constant="-16" id="j0e-jy-v5T"/>
+                            <constraint firstItem="nFm-eN-Pdz" firstAttribute="top" secondItem="hpd-Mc-5Hg" secondAttribute="bottom" id="rQ5-pB-D2I"/>
+                        </constraints>
+                        <variation key="default">
+                            <mask key="subviews">
+                                <exclude reference="c97-Fl-oMW"/>
+                                <exclude reference="hpd-Mc-5Hg"/>
+                                <exclude reference="nFm-eN-Pdz"/>
+                            </mask>
+                            <mask key="constraints">
+                                <exclude reference="cYe-Mi-aoe"/>
+                                <exclude reference="Jk3-EQ-YJS"/>
+                                <exclude reference="LzV-Ds-bs4"/>
+                                <exclude reference="eU9-Cx-Id2"/>
+                                <exclude reference="bXn-60-CMW"/>
+                                <exclude reference="h1J-DK-uh9"/>
+                                <exclude reference="j0e-jy-v5T"/>
+                                <exclude reference="8by-Hy-Du3"/>
+                                <exclude reference="HdN-Dq-5rW"/>
+                                <exclude reference="rQ5-pB-D2I"/>
+                            </mask>
+                        </variation>
+                        <variation key="widthClass=compact">
+                            <mask key="subviews">
+                                <include reference="c97-Fl-oMW"/>
+                                <include reference="hpd-Mc-5Hg"/>
+                                <include reference="nFm-eN-Pdz"/>
+                            </mask>
+                            <mask key="constraints">
+                                <include reference="cYe-Mi-aoe"/>
+                                <include reference="Jk3-EQ-YJS"/>
+                                <include reference="LzV-Ds-bs4"/>
+                                <include reference="eU9-Cx-Id2"/>
+                                <include reference="bXn-60-CMW"/>
+                                <include reference="h1J-DK-uh9"/>
+                                <include reference="j0e-jy-v5T"/>
+                                <include reference="8by-Hy-Du3"/>
+                                <include reference="HdN-Dq-5rW"/>
+                                <include reference="rQ5-pB-D2I"/>
+                            </mask>
+                        </variation>
+                    </view>
+                    <navigationItem key="navigationItem" title="剧本" id="iPd-eo-Juk">
+                        <barButtonItem key="leftBarButtonItem" image="SearchBarButtonHighlight.png" id="4Qy-Ay-eYi">
+                            <connections>
+                                <action selector="screenPlayPushToSearch:" destination="9hz-dM-8XY" id="fN7-uk-a0Y"/>
+                            </connections>
+                        </barButtonItem>
+                    </navigationItem>
+                    <connections>
+                        <outlet property="findOutScreenplayButton" destination="hpd-Mc-5Hg" id="X2b-Pa-Cgt"/>
+                        <outlet property="selectScreenplayButton" destination="c97-Fl-oMW" id="Uxr-91-41L"/>
+                        <outlet property="tableView" destination="nFm-eN-Pdz" id="feQ-JS-3jL"/>
+                        <segue destination="veR-dd-bPq" kind="push" identifier="screenPlayPushToSift" id="5G3-Su-grA"/>
+                        <segue destination="Fe1-Ls-Q2X" kind="push" identifier="screenPlayInfo" id="4cu-cf-6ex"/>
+                        <segue destination="W6r-xr-2yb" kind="push" identifier="ScreenPlayPushToSearch" id="MO6-16-tbA"/>
+                    </connections>
+                </viewController>
+                <placeholder placeholderIdentifier="IBFirstResponder" id="IWT-Bw-END" userLabel="First Responder" sceneMemberID="firstResponder"/>
+            </objects>
+            <point key="canvasLocation" x="-3511.5" y="1132"/>
+        </scene>
+        <!--Sift View Controller-->
+        <scene sceneID="kM1-kR-6qX">
+            <objects>
+                <viewController hidesBottomBarWhenPushed="YES" id="veR-dd-bPq" customClass="SiftViewController" sceneMemberID="viewController">
+                    <layoutGuides>
+                        <viewControllerLayoutGuide type="top" id="oWY-bE-OH9"/>
+                        <viewControllerLayoutGuide type="bottom" id="tD9-db-xwF"/>
+                    </layoutGuides>
+                    <view key="view" contentMode="scaleToFill" id="4OF-Y3-Lfu">
+                        <rect key="frame" x="0.0" y="0.0" width="600" height="600"/>
+                        <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
+                        <subviews>
+                            <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="xcj-41-sBp">
+                                <rect key="frame" x="-23" y="-15" width="46" height="30"/>
+                                <color key="backgroundColor" red="1" green="1" blue="1" alpha="1" colorSpace="calibratedRGB"/>
+                                <constraints>
+                                    <constraint firstAttribute="width" secondItem="xcj-41-sBp" secondAttribute="height" multiplier="5:2" id="8Ol-Ml-T3A"/>
+                                </constraints>
+                                <color key="tintColor" white="0.25" alpha="1" colorSpace="custom" customColorSpace="calibratedWhite"/>
+                                <state key="normal" title="最新">
+                                    <color key="titleShadowColor" white="0.5" alpha="1" colorSpace="calibratedWhite"/>
+                                </state>
+                                <variation key="default">
+                                    <mask key="constraints">
+                                        <exclude reference="8Ol-Ml-T3A"/>
+                                    </mask>
+                                </variation>
+                                <variation key="widthClass=compact">
+                                    <mask key="constraints">
+                                        <include reference="8Ol-Ml-T3A"/>
+                                    </mask>
+                                </variation>
+                                <connections>
+                                    <action selector="newsButtonAction:" destination="veR-dd-bPq" eventType="touchUpInside" id="Is9-P7-ksU"/>
+                                </connections>
+                            </button>
+                            <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="4GQ-z4-Kei">
+                                <rect key="frame" x="-23" y="-15" width="46" height="30"/>
+                                <color key="backgroundColor" red="1" green="1" blue="1" alpha="1" colorSpace="calibratedRGB"/>
+                                <color key="tintColor" white="0.25" alpha="1" colorSpace="custom" customColorSpace="calibratedWhite"/>
+                                <state key="normal" title="最热">
+                                    <color key="titleShadowColor" white="0.5" alpha="1" colorSpace="calibratedWhite"/>
+                                </state>
+                                <connections>
+                                    <action selector="hotButtonAction:" destination="veR-dd-bPq" eventType="touchUpInside" id="M0Q-gb-IGc"/>
+                                </connections>
+                            </button>
+                            <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="LaD-5E-CZi">
+                                <rect key="frame" x="-23" y="-15" width="46" height="30"/>
+                                <color key="backgroundColor" red="1" green="1" blue="1" alpha="1" colorSpace="calibratedRGB"/>
+                                <color key="tintColor" white="0.25" alpha="1" colorSpace="custom" customColorSpace="calibratedWhite"/>
+                                <state key="normal" title="好评">
+                                    <color key="titleShadowColor" white="0.5" alpha="1" colorSpace="calibratedWhite"/>
+                                </state>
+                                <connections>
+                                    <action selector="goodButtonAction:" destination="veR-dd-bPq" eventType="touchUpInside" id="0vC-Ce-RZL"/>
+                                </connections>
+                            </button>
+                            <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="aX1-Pz-POS">
+                                <rect key="frame" x="-23" y="-15" width="46" height="30"/>
+                                <color key="backgroundColor" red="1" green="1" blue="1" alpha="1" colorSpace="calibratedRGB"/>
+                                <color key="tintColor" white="0.25" alpha="1" colorSpace="custom" customColorSpace="calibratedWhite"/>
+                                <state key="normal" title="类型">
+                                    <color key="titleShadowColor" white="0.5" alpha="1" colorSpace="calibratedWhite"/>
+                                </state>
+                                <state key="selected" title="类型"/>
+                                <connections>
+                                    <action selector="typeButtonAction:" destination="veR-dd-bPq" eventType="touchUpInside" id="GPL-If-4zE"/>
+                                </connections>
+                            </button>
+                        </subviews>
+                        <color key="backgroundColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
+                        <constraints>
+                            <constraint firstItem="4GQ-z4-Kei" firstAttribute="top" secondItem="oWY-bE-OH9" secondAttribute="bottom" id="1Nq-Ec-uJq"/>
+                            <constraint firstItem="LaD-5E-CZi" firstAttribute="height" secondItem="aX1-Pz-POS" secondAttribute="height" id="Ase-zo-Gvs"/>
+                            <constraint firstItem="4GQ-z4-Kei" firstAttribute="leading" secondItem="xcj-41-sBp" secondAttribute="trailing" id="DsQ-xT-SCe"/>
+                            <constraint firstAttribute="width" secondItem="xcj-41-sBp" secondAttribute="width" multiplier="4:1" id="KJS-M6-4Cn"/>
+                            <constraint firstItem="aX1-Pz-POS" firstAttribute="top" secondItem="oWY-bE-OH9" secondAttribute="bottom" id="Phh-SU-blD"/>
+                            <constraint firstItem="4GQ-z4-Kei" firstAttribute="width" secondItem="xcj-41-sBp" secondAttribute="width" id="VK0-LI-GS3"/>
+                            <constraint firstItem="LaD-5E-CZi" firstAttribute="width" secondItem="aX1-Pz-POS" secondAttribute="width" id="ZFn-Ke-bNT"/>
+                            <constraint firstItem="LaD-5E-CZi" firstAttribute="top" secondItem="oWY-bE-OH9" secondAttribute="bottom" id="f0q-Th-kCT"/>
+                            <constraint firstItem="xcj-41-sBp" firstAttribute="top" secondItem="oWY-bE-OH9" secondAttribute="bottom" id="hfm-el-5TU"/>
+                            <constraint firstAttribute="trailingMargin" secondItem="aX1-Pz-POS" secondAttribute="trailing" constant="-16" id="i9q-G2-Nb5"/>
+                            <constraint firstItem="4GQ-z4-Kei" firstAttribute="height" secondItem="xcj-41-sBp" secondAttribute="height" id="leA-XD-sf1"/>
+                            <constraint firstItem="LaD-5E-CZi" firstAttribute="height" secondItem="4GQ-z4-Kei" secondAttribute="height" id="lf1-Qc-ITL"/>
+                            <constraint firstItem="xcj-41-sBp" firstAttribute="leading" secondItem="4OF-Y3-Lfu" secondAttribute="leadingMargin" constant="-16" id="m4K-lc-w6o"/>
+                            <constraint firstItem="LaD-5E-CZi" firstAttribute="width" secondItem="4GQ-z4-Kei" secondAttribute="width" id="mSZ-cJ-vYr"/>
+                            <constraint firstItem="LaD-5E-CZi" firstAttribute="leading" secondItem="4GQ-z4-Kei" secondAttribute="trailing" id="md3-c9-25o"/>
+                        </constraints>
+                        <variation key="default">
+                            <mask key="subviews">
+                                <exclude reference="xcj-41-sBp"/>
+                                <exclude reference="4GQ-z4-Kei"/>
+                                <exclude reference="LaD-5E-CZi"/>
+                                <exclude reference="aX1-Pz-POS"/>
+                            </mask>
+                            <mask key="constraints">
+                                <exclude reference="1Nq-Ec-uJq"/>
+                                <exclude reference="DsQ-xT-SCe"/>
+                                <exclude reference="VK0-LI-GS3"/>
+                                <exclude reference="leA-XD-sf1"/>
+                                <exclude reference="Ase-zo-Gvs"/>
+                                <exclude reference="ZFn-Ke-bNT"/>
+                                <exclude reference="f0q-Th-kCT"/>
+                                <exclude reference="lf1-Qc-ITL"/>
+                                <exclude reference="mSZ-cJ-vYr"/>
+                                <exclude reference="md3-c9-25o"/>
+                                <exclude reference="Phh-SU-blD"/>
+                                <exclude reference="i9q-G2-Nb5"/>
+                                <exclude reference="KJS-M6-4Cn"/>
+                                <exclude reference="hfm-el-5TU"/>
+                                <exclude reference="m4K-lc-w6o"/>
+                            </mask>
+                        </variation>
+                        <variation key="widthClass=compact">
+                            <mask key="subviews">
+                                <include reference="xcj-41-sBp"/>
+                                <include reference="4GQ-z4-Kei"/>
+                                <include reference="LaD-5E-CZi"/>
+                                <include reference="aX1-Pz-POS"/>
+                            </mask>
+                            <mask key="constraints">
+                                <include reference="1Nq-Ec-uJq"/>
+                                <include reference="DsQ-xT-SCe"/>
+                                <include reference="VK0-LI-GS3"/>
+                                <include reference="leA-XD-sf1"/>
+                                <include reference="Ase-zo-Gvs"/>
+                                <include reference="ZFn-Ke-bNT"/>
+                                <include reference="f0q-Th-kCT"/>
+                                <include reference="lf1-Qc-ITL"/>
+                                <include reference="mSZ-cJ-vYr"/>
+                                <include reference="md3-c9-25o"/>
+                                <include reference="Phh-SU-blD"/>
+                                <include reference="i9q-G2-Nb5"/>
+                                <include reference="KJS-M6-4Cn"/>
+                                <include reference="hfm-el-5TU"/>
+                                <include reference="m4K-lc-w6o"/>
+                            </mask>
+                        </variation>
+                    </view>
+                    <navigationItem key="navigationItem" id="h6M-Op-hxb"/>
+                    <connections>
+                        <outlet property="goodButton" destination="LaD-5E-CZi" id="YoL-Uv-gth"/>
+                        <outlet property="hotButton" destination="4GQ-z4-Kei" id="dIy-b6-iey"/>
+                        <outlet property="newsButton" destination="xcj-41-sBp" id="Mkj-mP-h5R"/>
+                        <outlet property="typeButton" destination="aX1-Pz-POS" id="gla-wS-SYZ"/>
+                        <segue destination="Fe1-Ls-Q2X" kind="push" identifier="siftPushToScreenInfor" id="RtL-zi-QZ0"/>
+                        <segue destination="Wlf-Jk-ktZ" kind="push" identifier="SiftToPlay" id="6tN-Ie-D9C"/>
+                        <segue destination="h5j-tw-KEj" kind="push" identifier="SiftModelToDarmaPlay" id="FU6-r7-HDQ"/>
+                    </connections>
+                </viewController>
+                <placeholder placeholderIdentifier="IBFirstResponder" id="aIW-0M-KJD" userLabel="First Responder" sceneMemberID="firstResponder"/>
+            </objects>
+            <point key="canvasLocation" x="-2559" y="1132"/>
+        </scene>
+        <!--Screen Play Infor View Controller-->
+        <scene sceneID="FwX-b2-cA1">
+            <objects>
+                <viewController hidesBottomBarWhenPushed="YES" id="Fe1-Ls-Q2X" customClass="ScreenPlayInforViewController" sceneMemberID="viewController">
+                    <layoutGuides>
+                        <viewControllerLayoutGuide type="top" id="GV4-Pt-ZA0"/>
+                        <viewControllerLayoutGuide type="bottom" id="XhN-5u-k3U"/>
+                    </layoutGuides>
+                    <view key="view" contentMode="scaleToFill" id="z5o-bA-Svs">
+                        <rect key="frame" x="0.0" y="0.0" width="600" height="600"/>
+                        <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
+                        <subviews>
+                            <tableView clipsSubviews="YES" contentMode="scaleToFill" alwaysBounceVertical="YES" dataMode="prototypes" style="plain" separatorStyle="default" rowHeight="44" sectionHeaderHeight="22" sectionFooterHeight="22" translatesAutoresizingMaskIntoConstraints="NO" id="sMa-iZ-cJR">
+                                <rect key="frame" x="0.0" y="0.0" width="320" height="568"/>
+                                <color key="backgroundColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
+                                <connections>
+                                    <outlet property="dataSource" destination="Fe1-Ls-Q2X" id="UWF-Bc-EZ1"/>
+                                    <outlet property="delegate" destination="Fe1-Ls-Q2X" id="dgB-jN-PzY"/>
+                                </connections>
+                            </tableView>
+                        </subviews>
+                        <color key="backgroundColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
+                        <constraints>
+                            <constraint firstAttribute="trailingMargin" secondItem="sMa-iZ-cJR" secondAttribute="trailing" constant="-16" id="0Ia-Mx-cUm"/>
+                            <constraint firstItem="sMa-iZ-cJR" firstAttribute="leading" secondItem="z5o-bA-Svs" secondAttribute="leadingMargin" constant="-16" id="LeV-80-bC5"/>
+                            <constraint firstItem="sMa-iZ-cJR" firstAttribute="top" secondItem="GV4-Pt-ZA0" secondAttribute="bottom" id="aFd-Ap-IGd">
+                                <variation key="widthClass=compact" constant="-64"/>
+                            </constraint>
+                            <constraint firstItem="sMa-iZ-cJR" firstAttribute="bottom" secondItem="z5o-bA-Svs" secondAttribute="bottomMargin" id="z9h-Dh-qnS">
+                                <variation key="widthClass=compact" constant="0.0"/>
+                            </constraint>
+                        </constraints>
+                        <variation key="default">
+                            <mask key="subviews">
+                                <exclude reference="sMa-iZ-cJR"/>
+                            </mask>
+                            <mask key="constraints">
+                                <exclude reference="0Ia-Mx-cUm"/>
+                                <exclude reference="LeV-80-bC5"/>
+                                <exclude reference="aFd-Ap-IGd"/>
+                                <exclude reference="z9h-Dh-qnS"/>
+                            </mask>
+                        </variation>
+                        <variation key="widthClass=compact">
+                            <mask key="subviews">
+                                <include reference="sMa-iZ-cJR"/>
+                            </mask>
+                            <mask key="constraints">
+                                <include reference="0Ia-Mx-cUm"/>
+                                <include reference="LeV-80-bC5"/>
+                                <include reference="aFd-Ap-IGd"/>
+                                <include reference="z9h-Dh-qnS"/>
+                            </mask>
+                        </variation>
+                    </view>
+                    <navigationItem key="navigationItem" id="EaE-uS-CHD"/>
+                    <connections>
+                        <outlet property="tableView" destination="sMa-iZ-cJR" id="jSl-6k-yuu"/>
+                    </connections>
+                </viewController>
+                <placeholder placeholderIdentifier="IBFirstResponder" id="dcW-DX-1bu" userLabel="First Responder" sceneMemberID="firstResponder"/>
+            </objects>
+            <point key="canvasLocation" x="-2272.5" y="2266"/>
+        </scene>
+        <!--我的-->
+        <scene sceneID="t8s-9L-iiG">
+            <objects>
+                <viewController id="Qfa-Yo-9mo" customClass="UserViewController" sceneMemberID="viewController">
+                    <layoutGuides>
+                        <viewControllerLayoutGuide type="top" id="RNu-gM-fBt"/>
+                        <viewControllerLayoutGuide type="bottom" id="IVQ-a3-y6L"/>
+                    </layoutGuides>
+                    <view key="view" contentMode="scaleToFill" id="C8z-ke-4yf">
+                        <rect key="frame" x="0.0" y="0.0" width="600" height="600"/>
+                        <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
+                        <color key="backgroundColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
+                    </view>
+                    <navigationItem key="navigationItem" title="我的" id="Ozo-Dg-800"/>
+                    <connections>
+                        <segue destination="8qk-5R-sOp" kind="push" identifier="userPushToLiked" id="iNA-In-N3Z"/>
+                    </connections>
+                </viewController>
+                <placeholder placeholderIdentifier="IBFirstResponder" id="vVe-cZ-i9H" userLabel="First Responder" sceneMemberID="firstResponder"/>
+            </objects>
+            <point key="canvasLocation" x="-4213.5" y="1808"/>
+        </scene>
+        <!--Liked View Controller-->
+        <scene sceneID="mEx-B4-1KP">
+            <objects>
+                <viewController hidesBottomBarWhenPushed="YES" id="8qk-5R-sOp" customClass="LikedViewController" sceneMemberID="viewController">
+                    <layoutGuides>
+                        <viewControllerLayoutGuide type="top" id="5X2-qA-VFn"/>
+                        <viewControllerLayoutGuide type="bottom" id="oTy-Fn-fwy"/>
+                    </layoutGuides>
+                    <view key="view" contentMode="scaleToFill" id="hCl-Ud-9vg">
+                        <rect key="frame" x="0.0" y="0.0" width="600" height="600"/>
+                        <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
+                        <color key="backgroundColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
+                    </view>
+                    <navigationItem key="navigationItem" id="pjm-8t-YI9"/>
+                    <connections>
+                        <segue destination="h5j-tw-KEj" kind="push" identifier="LikePushToPlayDrama" id="6qN-mw-Zig"/>
+                    </connections>
+                </viewController>
+                <placeholder placeholderIdentifier="IBFirstResponder" id="xNZ-oQ-Wvz" userLabel="First Responder" sceneMemberID="firstResponder"/>
+            </objects>
+            <point key="canvasLocation" x="-3364.5" y="1943"/>
+        </scene>
+        <!--微电影-->
+        <scene sceneID="C5t-29-uvx">
+            <objects>
+                <navigationController automaticallyAdjustsScrollViewInsets="NO" id="Jp4-d2-5TJ" sceneMemberID="viewController">
+                    <tabBarItem key="tabBarItem" title="微电影" image="tab_icon_find.png" id="f5G-nE-IOD"/>
+                    <toolbarItems/>
+                    <navigationBar key="navigationBar" contentMode="scaleToFill" id="cXs-nH-c3m">
+                        <rect key="frame" x="0.0" y="0.0" width="320" height="44"/>
+                        <autoresizingMask key="autoresizingMask"/>
+                    </navigationBar>
+                    <nil name="viewControllers"/>
+                    <connections>
+                        <segue destination="vXZ-lx-hvc" kind="relationship" relationship="rootViewController" id="lcJ-CL-OC1"/>
+                    </connections>
+                </navigationController>
+                <placeholder placeholderIdentifier="IBFirstResponder" id="9gQ-TI-W7a" userLabel="First Responder" sceneMemberID="firstResponder"/>
+            </objects>
+            <point key="canvasLocation" x="-4287" y="-366"/>
+        </scene>
+        <!--Tab Bar Controller-->
+        <scene sceneID="JAk-mY-YSu">
+            <objects>
+                <tabBarController automaticallyAdjustsScrollViewInsets="NO" id="PXh-Mk-yEH" sceneMemberID="viewController">
+                    <toolbarItems/>
+                    <nil key="simulatedBottomBarMetrics"/>
+                    <tabBar key="tabBar" contentMode="scaleToFill" id="Fhf-ev-X9u">
+                        <autoresizingMask key="autoresizingMask"/>
+                        <color key="backgroundColor" white="0.0" alpha="0.0" colorSpace="calibratedWhite"/>
+                    </tabBar>
+                    <connections>
+                        <segue destination="Jp4-d2-5TJ" kind="relationship" relationship="viewControllers" id="QuJ-59-YwZ"/>
+                        <segue destination="t0Z-8y-dqi" kind="relationship" relationship="viewControllers" id="EuB-Bl-eMA"/>
+                        <segue destination="4Xd-U4-WmD" kind="relationship" relationship="viewControllers" id="pZ8-ly-RRG"/>
+                        <segue destination="Mgs-JX-Vh5" kind="relationship" relationship="viewControllers" id="PxZ-Ne-bfm"/>
+                    </connections>
+                </tabBarController>
+                <placeholder placeholderIdentifier="IBFirstResponder" id="90y-1Q-Cfm" userLabel="First Responder" sceneMemberID="firstResponder"/>
+            </objects>
+            <point key="canvasLocation" x="-5305.5" y="1052"/>
+        </scene>
+        <!--网络剧-->
+        <scene sceneID="Ylk-5Z-t9w">
+            <objects>
+                <navigationController automaticallyAdjustsScrollViewInsets="NO" id="t0Z-8y-dqi" sceneMemberID="viewController">
+                    <tabBarItem key="tabBarItem" title="网络剧" image="tab_icon_hot.png" id="5Sz-dE-p6n"/>
+                    <toolbarItems/>
+                    <navigationBar key="navigationBar" contentMode="scaleToFill" id="3Ut-EF-VLP">
+                        <rect key="frame" x="0.0" y="0.0" width="320" height="44"/>
+                        <autoresizingMask key="autoresizingMask"/>
+                    </navigationBar>
+                    <nil name="viewControllers"/>
+                    <connections>
+                        <segue destination="mJG-2Q-RqR" kind="relationship" relationship="rootViewController" id="zzA-7t-NAw"/>
+                    </connections>
+                </navigationController>
+                <placeholder placeholderIdentifier="IBFirstResponder" id="HTl-hf-4wr" userLabel="First Responder" sceneMemberID="firstResponder"/>
+            </objects>
+            <point key="canvasLocation" x="-4287" y="330"/>
+        </scene>
+        <!--剧本-->
+        <scene sceneID="leM-Kx-Yul">
+            <objects>
+                <navigationController automaticallyAdjustsScrollViewInsets="NO" id="4Xd-U4-WmD" sceneMemberID="viewController">
+                    <tabBarItem key="tabBarItem" title="剧本" image="TabRecommendNormal~320.png" id="U6z-xS-iqm"/>
+                    <toolbarItems/>
+                    <navigationBar key="navigationBar" contentMode="scaleToFill" id="fEe-kV-w6X">
+                        <rect key="frame" x="0.0" y="0.0" width="320" height="44"/>
+                        <autoresizingMask key="autoresizingMask"/>
+                    </navigationBar>
+                    <nil name="viewControllers"/>
+                    <connections>
+                        <segue destination="9hz-dM-8XY" kind="relationship" relationship="rootViewController" id="dA1-Wv-SCM"/>
+                    </connections>
+                </navigationController>
+                <placeholder placeholderIdentifier="IBFirstResponder" id="PXk-qj-iac" userLabel="First Responder" sceneMemberID="firstResponder"/>
+            </objects>
+            <point key="canvasLocation" x="-4287" y="1004"/>
+        </scene>
+        <!--我的-->
+        <scene sceneID="CeU-5d-1xv">
+            <objects>
+                <navigationController automaticallyAdjustsScrollViewInsets="NO" id="Mgs-JX-Vh5" sceneMemberID="viewController">
+                    <tabBarItem key="tabBarItem" title="我的" image="TabBarIconMyNormal.png" id="0pe-wx-3b9"/>
+                    <toolbarItems/>
+                    <navigationBar key="navigationBar" contentMode="scaleToFill" id="Xps-X3-YlD">
+                        <rect key="frame" x="0.0" y="0.0" width="320" height="44"/>
+                        <autoresizingMask key="autoresizingMask"/>
+                    </navigationBar>
+                    <nil name="viewControllers"/>
+                    <connections>
+                        <segue destination="Qfa-Yo-9mo" kind="relationship" relationship="rootViewController" id="jgA-GE-zK7"/>
+                    </connections>
+                </navigationController>
+                <placeholder placeholderIdentifier="IBFirstResponder" id="gVj-PO-1Ab" userLabel="First Responder" sceneMemberID="firstResponder"/>
+            </objects>
+            <point key="canvasLocation" x="-5085" y="1808"/>
+        </scene>
+    </scenes>
+    <resources>
+        <image name="BackBarButton.png" width="22" height="22"/>
+        <image name="SearchBarButtonHighlight.png" width="22" height="22"/>
+        <image name="TabBarIconMyNormal.png" width="26" height="26"/>
+        <image name="TabRecommendNormal~320.png" width="32" height="32"/>
+        <image name="tab_icon_find.png" width="30" height="30"/>
+        <image name="tab_icon_hot.png" width="30" height="30"/>
+        <image name="user_center2_tab_history.png" width="20" height="20"/>
+    </resources>
+    <inferredMetricsTieBreakers>
+        <segue reference="MO6-16-tbA"/>
+        <segue reference="5G3-Su-grA"/>
+        <segue reference="4cu-cf-6ex"/>
+        <segue reference="SBP-yO-AXR"/>
+        <segue reference="eUo-Zq-HO6"/>
+        <segue reference="Kkn-Rh-nts"/>
+    </inferredMetricsTieBreakers>
+</document>

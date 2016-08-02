@@ -1,0 +1,21 @@
+<?xml version="1.0" encoding="UTF-8" standalone="yes"?>
+<model userDefinedModelVersionIdentifier="" type="com.apple.IDECoreDataModeler.DataModel" documentVersion="1.0" lastSavedToolsVersion="6252" systemVersion="14B25" minimumToolsVersion="Automatic" macOSVersion="Automatic" iOSVersion="Automatic">
+    <entity name="SearchHistory" representedClassName="SearchHistory" syncable="YES">
+        <attribute name="mySearch" optional="YES" attributeType="String" syncable="YES"/>
+    </entity>
+    <entity name="WatchHistory" representedClassName="WatchHistory" syncable="YES">
+        <attribute name="descript" optional="YES" attributeType="String" syncable="YES"/>
+        <attribute name="img" optional="YES" attributeType="String" syncable="YES"/>
+        <attribute name="introduction" optional="YES" attributeType="String" syncable="YES"/>
+        <attribute name="maxepisode" optional="YES" attributeType="String" syncable="YES"/>
+        <attribute name="maxid" optional="YES" attributeType="String" syncable="YES"/>
+        <attribute name="score" optional="YES" attributeType="String" syncable="YES"/>
+        <attribute name="time" optional="YES" attributeType="String" syncable="YES"/>
+        <attribute name="title" optional="YES" attributeType="String" syncable="YES"/>
+        <attribute name="videoID" optional="YES" attributeType="String" syncable="YES"/>
+    </entity>
+    <elements>
+        <element name="SearchHistory" positionX="-63" positionY="-18" width="128" height="60"/>
+        <element name="WatchHistory" positionX="-54" positionY="0" width="128" height="178"/>
+    </elements>
+</model>
